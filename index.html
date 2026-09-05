@@ -46,6 +46,38 @@
                 <div id="totalPrice"></div>
             </section>
         </form>
+
+        <section class="gallery" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Pizza Gallery</h2>
+            <div class="row">
+                <div class="column">
+                    <img src="pizza1.jpg" onclick="openModal(); currentSlide(1)" class="hover-shadow cursor" alt="Pizza 1">
+                </div>
+                <div class="column">
+                    <img src="pizza2.jpg" onclick="openModal(); currentSlide(2)" class="hover-shadow cursor" alt="Pizza 2">
+                </div>
+                <div class="column">
+                    <img src="pizza3.webp" onclick="openModal(); currentSlide(3)" class="hover-shadow cursor" alt="Pizza 3">
+                </div>
+            </div>
+        </section>
+
+        <div id="myModal" class="modal" role="dialog" aria-modal="true" aria-label="Pizza image gallery">
+            <button class="close cursor" type="button" onclick="closeModal()" aria-label="Close gallery">&times;</button>
+            <div class="modal-content">
+                <div class="mySlides">
+                    <img src="pizza1.jpg" alt="Pizza 1">
+                </div>
+                <div class="mySlides">
+                    <img src="pizza2.jpg" alt="Pizza 2">
+                </div>
+                <div class="mySlides">
+                    <img src="pizza3.webp" alt="Pizza 3">
+                </div>
+                <button class="prev" type="button" onclick="plusSlides(-1)" aria-label="Previous image">&#10094;</button>
+                <button class="next" type="button" onclick="plusSlides(1)" aria-label="Next image">&#10095;</button>
+            </div>
+        </div>
     </main>
 
     <script src="pizza.javascript/Pizza.js"></script>

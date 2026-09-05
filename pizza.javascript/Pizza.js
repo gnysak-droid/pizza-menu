@@ -38,3 +38,51 @@ function getTopping(runningTotal, text1) {
     document.getElementById("totalPrice").innerHTML =
         "<h2>Total: <strong>$" + runningTotal.toFixed(2) + "</strong></h2>";
 }
+
+var slideIndex = 1;
+
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+function plusSlides(direction) {
+    showSlides(slideIndex += direction);
+}
+
+function currentSlide(slideNumber) {
+    showSlides(slideIndex = slideNumber);
+}
+
+function showSlides(slideNumber) {
+    var slides = document.getElementsByClassName("mySlides");
+
+    if (slideNumber > slides.length) {
+        slideIndex = 1;
+    }
+    if (slideNumber < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+
+document.addEventListener("keydown", function (event) {
+    var modal = document.getElementById("myModal");
+    if (modal.style.display !== "block") {
+        return;
+    }
+    if (event.key === "Escape") {
+        closeModal();
+    } else if (event.key === "ArrowLeft") {
+        plusSlides(-1);
+    } else if (event.key === "ArrowRight") {
+        plusSlides(1);
+    }
+});

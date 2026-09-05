@@ -54,6 +54,106 @@ label,
     text-align: right;
 }
 
+.gallery {
+    margin-top: 50px;
+}
+
+.gallery h2 {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column img {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+.hover-shadow {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.45);
+    transform: translateY(-2px);
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.92);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.modal-content {
+    margin: auto;
+    max-width: 700px;
+    position: relative;
+    width: 85%;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    display: block;
+    margin: auto;
+    max-height: 75vh;
+    object-fit: contain;
+    width: 100%;
+}
+
+.close,
+.prev,
+.next {
+    background: none;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    z-index: 11;
+}
+
+.close {
+    font-size: 40px;
+    right: 24px;
+    top: 10px;
+}
+
+.prev,
+.next {
+    font-size: 36px;
+    padding: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: -54px;
+}
+
+.next {
+    right: -54px;
+}
+
 @media (max-width: 600px) {
     #frmMenu {
         grid-template-columns: 1fr;
@@ -61,5 +161,17 @@ label,
 
     #cart {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .row {
+        gap: 8px;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
     }
 }
